@@ -25,6 +25,7 @@ docker compose up -d && docker compose logs -f
 The .p12 certificate file will be created in ./data/secrets
 ```bash
 docker exec -it openconnect ocuser exampleuser 'Example User'
+docker exec -it openconnect ocuser -A steve 'Steve Jobs' - HarmonyOS/iOS
 ```
 
 ## Example of connecting the client using the openconnect utility

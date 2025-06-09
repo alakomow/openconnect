@@ -27,12 +27,12 @@ services:
     cap_add:
       - NET_ADMIN
     hostname: openconnect
-    #env_file:
-      #- .env
-    environment:
-      - "TZ=Europe/Moscow"
-      - "SRV_CN=example.com"
-      - "SRV_CA=Example CA"
+    env_file:
+      - .env
+    # environment:
+    #   - "TZ=Europe/Moscow"
+    #   - "SRV_CN=${SRV_CN:-example.com}"
+    #   - "SRV_CA=Example CA"
       #- OTP_ENABLE="true"
       #- OTP_SEND_BY_EMAIL="true"
       #- MSMTP_HOST="smtp.example.com"
@@ -50,4 +50,4 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     ports:
-      - 43443:443/tcp
+      - ${SRV_PORT}:443/tcp
